@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+</head>
+
+   <div class="jumbotron">
+       Rankings for {{name}}
+   </div>
+
+  {% for i in range(players|length) %}
+
+<div class="card text-white text-center bg-success mb-3 container-fluid" style="max-width: 18rem;">
+  <div class="card-header">Place {{i+1}}: </div>
+  <div class="card-body">
+    <h5 class="card-title">{{players[i]}}</h5>
+    <p class="card-text"></p>
+  </div>
+</div>
+<br>
+  {% endfor %}
+
+<br>
+<br>
+<br>
+
+
+</body>
+</html>

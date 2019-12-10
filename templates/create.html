@@ -1,0 +1,22 @@
+
+{% block content %}
+    <h1>Create a Ballot</h1>
+    <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.ballot_name.label }}<br>
+            {{ form.ballot_name(size=32) }}
+            <ul>
+                {% for error in form.ballot_name.errors %}
+                    <li style="color:red;">{{ error }}</li>
+                {% endfor %}
+            </ul>
+        </p>
+        <p>
+            {{ form.player_list.label }}<br>
+            {{ form.player_list(size=70) }}
+        </p>
+        <p>{{ form.ranker_amount() }} {{ form.ranker_amount.label }}</p>
+        <p>{{ form.submit() }}</p>
+    </form>
+{% endblock %}

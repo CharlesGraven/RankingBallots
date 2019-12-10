@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="jumbotron jumbotron-fluid" style="background-color:#ff9900">
+  <div class="container">
+    <h1 class="display-4">BallotRanks</h1>
+    <p class="lead">Description Here.</p>
+  </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4 p-3 mb-2 bg-primary text-white">
+            <div class="card text-center ">
+
+                <div class="card-block align-center">
+                    <h1 class="card-title">Create a Ballot</h1>
+                     <h3><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></h3>
+                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4 ">
+            <div class="card text-center">
+                <div class="card-block">
+                    <h1 class="card-title">Search for a Ballot</h1>
+                    <h3><span class="glyphicon glyphicon-search" aria-hidden="true"></span></h3>
+                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4 p-3 mb-2 bg-primary text-white">
+            <div class="card text-center">
+
+                <div class="card-block">
+                    <h1 class="card-title">Rank</h1>
+                    <h3><span class="glyphicon glyphicon-signal" aria-hidden="true"></span></h3>
+                    <p class="card-text">This card has supporting text below as a natural lead-in.
+                        Aliquam codeply mauris arcu, tristique a lobortis vitae, condimentum feugiat justo.</p>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <br>
+  <br>
+  <br>
+  <br>
+
+    <form action="" method="post" novalidate>
+        <div class="card text-center bg-primary">
+        <div class="card-block">
+            <h1>Create a Ballot</h1>
+            <h3><span class="glyphicon glyphicon-signal" aria-hidden="true"></span></h3>
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.ballot_name.label }}
+            {{ form.ballot_name(size=32) }}
+            <ul>
+                {% for error in form.ballot_name.errors %}
+                    <li style="color:red;">{{ error }}</li>
+                {% endfor %}
+            </ul>
+        </p>
+        <p>
+            {{ form.player_list.label }}
+            {{ form.player_list(size=70) }}
+        </p>
+        <p>{{ form.ranker_amount() }} {{ form.ranker_amount.label }}</p>
+        <p>{{ form.submit() }}</p>
+        </div>
+        </div>
+    </form>
+
+</body>
+</html>

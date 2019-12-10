@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+</head>
+<form action="" method="post" novalidate>
+
+    <div class="jumbotron">
+       Please rank the following players for {{name}}
+   </div>
+
+  {% for i in range(players|length) %}
+    <div class="card text-center">
+    <div class="card-block">
+      <b>Place {{i+1}}:   </b>
+      <select name="{{i}}" method="GET" action="/" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+      <option value="{{players[i]}}" selected>{{players[i]}}</option>
+        {% for player in players %}
+          <option value="{{player}}">{{player}}</option>
+        {% endfor %}
+      </select>
+    </div>
+    </div>
+    <br>
+    <br>
+  {% endfor %}
+
+<br>
+<br>
+<br>
+
+    <button type="submit" value="Submit">Submit</button>
+
+</form>
+</body>
+</html>
