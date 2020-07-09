@@ -4,10 +4,10 @@ import pymongo
 import Ballot_Creation
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'you-will-never-guess'
+app.config['SECRET_KEY'] = ''
 app.debug = True
 
-client = pymongo.MongoClient("mongodb://cj:riw762Wat@db-shard-00-00-w46cp.mongodb.net:27017,db-shard-00-01-w46cp.mongodb.net:27017,db-shard-00-02-w46cp.mongodb.net:27017/test?ssl=true&replicaSet=DB-shard-0&authSource=admin&retryWrites=true&w=majority")
+client = pymongo.MongoClient("")
 db = client['test']
 mycol = db['tournaments']
 
